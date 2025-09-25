@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Portfolio GIS & Remote Sensing - Spatial Analyst | Remote Sensing Engineer" />
+  <title>Ahmad Athoillah — GIS & Remote Sensing Portfolio</title>
+
+  <!-- Minimal critical style inline for fast first paint -->
+  <style>
+    :root{
+      --bg:#f7fbff; --card:#ffffff; --accent:#0b75bd; --muted:#6b7280; --glass: rgba(255,255,255,0.6);
+      --maxw:1100px; --radius:14px; --shadow: 0 6px 20px rgba(8,15,25,0.07);
+      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      color: #0b2540;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;background:linear-gradient(180deg,#f2fbff 0%,var(--bg) 100%);-webkit-font-smoothing:antialiased}
+
+    .container{width:calc(100% - 32px);max-width:var(--maxw);margin:28px auto}
+    header{display:flex;align-items:center;justify-content:space-between;padding:18px;border-radius:12px;background:linear-gradient(90deg, rgba(255,255,255,0.8), rgba(255,255,255,0.6));box-shadow:var(--shadow)}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:50px;height:50px;background:var(white);border-radius:10px;color:#ffffff;display:grid;place-items:center;font-weight:700}
+    nav{display:flex;gap:14px;align-items:center}
+    nav a{color:var(--muted);text-decoration:none;font-weight:600}
+    .cta{background:var(--accent);color:#fff;padding:8px 12px;border-radius:10px;text-decoration:none;font-weight:700}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1fr 380px;gap:22px;align-items:center;margin-top:22px}
+    .hero-card{padding:22px;background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow)}
+    h1{margin:0;font-size:28px}
+    p.lead{color:var(--muted);margin:10px 0 18px}
+    .skill-badges{display:flex;flex-wrap:wrap;gap:8px}
+    .badge{background:var(--glass);padding:6px 8px;border-radius:8px;font-size:13px;color:var(--accent);border:1px solid rgba(11,117,189,0.08)}
+
+    .profile-card{display:flex;flex-direction:column;align-items:center;padding:18px;background:linear-gradient(180deg,#e8f8ff, #ffffff);border-radius:12px}
+    .avatar{width:120px;height:120px;border-radius:12px;background:linear-gradient(135deg,#0b75bd,#3fb0ff);display:grid;place-items:center;color:#fff;font-size:28px;font-weight:700}
+    .small{font-size:13px;color:var(--muted)}
+
+    /* Projects grid */
+    .projects{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:22px}
+    .card{background:var(--card);padding:14px;border-radius:12px;box-shadow:var(--shadow);display:flex;flex-direction:column}
+    .card .meta{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+    .card h3{margin:0;font-size:16px}
+    .card p{margin:8px 0;color:var(--muted);font-size:14px}
+    .card .links{margin-top:auto;display:flex;gap:8px}
+    .btn{padding:8px 10px;border-radius:8px;background:transparent;border:1px solid rgba(11,117,189,0.12);text-decoration:none;color:var(--accent);font-weight:700;font-size:13px}
+
+    /* Testimonials */
+    .testimonials{margin-top:22px;background:linear-gradient(180deg,#ffffff,#f7fbff);padding:16px;border-radius:12px}
+    .t-list{display:flex;gap:12px;overflow:hidden}
+    .t-item{min-width:260px;background:#fff;padding:12px;border-radius:10px;border:1px solid rgba(11,117,189,0.04)}
+    .t-item p{margin:8px 0;color:var(--muted)}
+
+    /* Contact */
+    footer{margin-top:30px;padding:18px;border-radius:12px;background:var(--card);display:flex;justify-content:space-between;align-items:center}
+
+    /* Responsive */
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr}
+      .projects{grid-template-columns:1fr}
+      nav{display:none}
+      header{padding:12px}
+    }
+
+    /* Small utilities */
+    .muted{color:var(--muted)}
+    .kbd{background:#f2f7fb;padding:6px 8px;border-radius:8px;font-weight:700}
+
+  </style>
+
+  <!-- Defer non-critical scripts for performance -->
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">
+          <img src="foto/Atok.jpg" alt="Ahmad Athoillah" style="width:50px;height:50px;border-radius:50%;object-fit:cover;">
+        </div>
+        <div>
+          <div style="font-weight:800">Ahmad Athoillah</div>
+          <div style="font-size:13px;color:var(--muted)">GIS & Remote Sensing Engineer</div>
+        </div>
+      </div>
+
+      <nav aria-label="Main navigation">
+        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+        <a href="#blog">Blog</a>
+        <a class="cta" href="#contact">Contact</a>
+      </nav>
+
+      <button id="menuBtn" aria-label="open menu" style="display:none">☰</button>
+    </header>
+
+    <section class="hero">
+      <div class="hero-card">
+        <h1>Surveyor - Urban and Regional Planning - GIS Mapping Enthusiast - GIS & Remote Sensing Engineer </h1>
+        <p class="lead"> Saya merupakan lulusan Diploma 3 Perencanaan Tata Ruang Wilayah dan Kota dengan tugas akhir berjudul Analisis Pengaruh Status Klorofil Vegetasi terhadap Suhu Permukaan Kawasan Kota
+            Pekalongan. Saya memiliki ketertarikan besar terhadap pengelolaan ruang yang berkelanjutan serta pemanfaatan teknologi spasial, khususnya dalam penggunaan perangkat lunak ArcGIS untuk analisis
+            dan perencanaan wilayah. Dengan bekal pendidikan, kemampuan kerja sama tim, serta semangat belajar yang tinggi, saya siap memberikan kontribusi profesional di lingkungan kerja yang dinamis.</p>
+        <div class="skill-badges">
+          <span class="badge">ArcGIS</span>
+          <span class="badge">QGIS</span>
+          <span class="badge">Google Earth Engine</span>
+          <span class="badge">Remote Sensing</span>
+          <span class="badge">Web GIS</span>
+          <span class="badge">Corel</span>
+        </div>
+
+        <div style="display:flex;gap:12px;margin-top:18px">
+          <a class="btn" href="#projects">Lihat Proyek</a>
+          <a class="btn" href="#contact">Hubungi Saya</a>
+        </div>
+      </div>
+
+      <aside class="profile-card">
+        <div class="logo">
+    <img src="foto/Atok.jpg" alt="Ahmad Athoillah" style="width:50px;height:50px;border-radius:50%;object-fit:cover;">
+    </div>
+        <div style="margin-top:12px;font-weight:700">Ahmad Athoillah</div>
+        <div class="small">D3 Perencanaan Tata Ruang Wilayah & Kota</div>
+        <div class="small">Universitas Diponegoro</div>
+        <div style="margin-top:10px;display:flex;gap:8px;flex-wrap:wrap;justify-content:center">
+          <a class="btn" href="#" onclick="openInNewTab('https://github.com/atok02')">GitHub</a>
+          <a class="btn" href="#" onclick="openInNewTab('https://www.linkedin.com/in/ahmad-athoillah-7ab0092aa/')">LinkedIn</a>
+        </div>
+        <div style="margin-top:12px;font-size:13px;color:var(--muted);text-align:center;">Ready for remote & hybrid roles. Based in Pekalongan, Indonesia.</div>
+      </aside>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="projects">
+      <article class="card">
+        <div class="meta"><h3>Survey Landsubsidence Kota Pekalongan</h3><span class="muted">2023</span></div>
+        <p>Menganalisa Lapangan Terkait Dampak Penurunan Muka Tanah Di Kota Pekalongan Sebagai Riset disertasi dosen Universitas Diponegoro di Radbour University Belanda.</p>
+        <div style="height:140px;border-radius:8px;overflow:hidden;display:grid;place-items:center;background:linear-gradient(135deg,#e6f6ff,#ffffff);">
+          <!-- Simple inline SVG placeholder; replace with real map thumbnail -->
+            <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+        <image href="foto/Lansubsidence.jpg"  width="100%"  height="100%"  preserveAspectRatio="xMidYMid slice"/>
+        </svg>
+        </div>
+        <p class="muted">Methods: Survey Lapangan, Pengumpulan Data Citra Satelit dan Pengolahan Data Spasial.</p>
+        <div class="links">
+          <a class="btn" href="#" onclick="openInNewTab('https://github.com/username/project-lst')">Code</a>
+          <a class="btn" href="#" onclick="openInNewTab('https://www.google.com/maps/@-6.8707735,109.6621348,3a,60y,153.08h,75.6t/data=!3m7!1e1!3m5!1s6XMo6LMauQLW8KbUqfJ3Pw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D14.39845558938886%26panoid%3D6XMo6LMauQLW8KbUqfJ3Pw%26yaw%3D153.08028705391234!7i13312!8i6656?authuser=0&entry=ttu&g_ep=EgoyMDI1MDkyMi4wIKXMDSoASAFQAw%3D%3D')">Live Map</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="meta"><h3>Asisten Pengabdian Dosen  ( Oktober – Juni )</h3><span class="muted">2024</span></div>
+        <p> Pengabdian di Desa Tanjungkulon dengan tema urban farming berjudul "Pemberdayaan
+ Ekonomi Masyarakat Melalui Urban Farming : Sistem Aquaponik pada Desa Tanjung Kulon, Kecamatan
+ Kajen, Kabupaten Pekalongan".</p>
+        <div style="height:140px;border-radius:8px;overflow:hidden;display:grid;place-items:center;background:linear-gradient(135deg,#fff7ec,#ffffff);">
+            <svg width="100%" height="100%" viewBox="0 0 600 140" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+       <image href="foto/Pengabdian.JPG" width="100%" height="100%" preserveAspectRatio="xMidYMid slice"/>
+        </svg>
+        </div>
+        <p class="muted">Methods: Pendekatan masyarakat guna meningkatkan pertanian modern melalui urban farming.</p>
+        <div class="links">
+  <a class="btn" href="https://jatengdaily.com/2023/masyarakat-desa-tanjung-pekalongan-dilatih-pengolahan-produk-aquaponik-juice-dan-keripik-pakcoy/?amp=1" target="_blank" rel="noopener noreferrer">Report</a>
+</div>
+      </article>
+
+      <article class="card">
+        <div class="meta"><h3>Flood Risk Mapping (LST + NDWI)</h3><span class="muted">2024</span></div>
+        <p>Combined NDWI analysis and DEM-based flow modelling to create a flood vulnerability map used for early-warning planning.</p>
+        <div style="height:140px;border-radius:8px;overflow:hidden;display:grid;place-items:center;background:linear-gradient(135deg,#eef7f3,#ffffff);">
+             <svg width="100%" height="100%" viewBox="0 0 600 140" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+       <image href="foto/NDWI.jpg" width="100%" height="100%" preserveAspectRatio="xMidYMid slice"/>
+        </svg>
+        </div>
+        <p class="muted">Tools: SRTM DEM, Sentinel-2, ArcGIS Hydrology.</p>
+        <div class="links">
+          <a class="btn" href="#" onclick="openInNewTab('https://github.com/username/project-flood')">Code</a>
+          <a class="btn" href="#" onclick="openInNewTab('https://example.com/dashboard')">Dashboard</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="meta"><h3>Interactive WebGIS Dashboard</h3><span class="muted">2024</span></div>
+        <p>ArcGIS Online dashboard showcasing infrastructure layers, spatial queries, and downloadable CSV for stakeholders.</p>
+        <div style="height:140px;border-radius:8px;overflow:hidden;display:grid;place-items:center;background:linear-gradient(135deg,#f3f4ff,#ffffff);">
+            <svg width="100%" height="100%" viewBox="0 0 600 140" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+       <image href="foto/webgis.png" width="100%" height="100%" preserveAspectRatio="xMidYMid slice"/>
+        </svg>
+        </div>
+        <p class="muted">Skills: Web GIS embedding, ArcGIS API, data pipelines, stakeholder mapping.</p>
+        <div class="links">
+          <a class="btn" href="#" onclick="openInNewTab('https://www.arcgis.com/apps/mapviewer/index.html?layers=fb106f7996f44926ae59849869f8424f')">View</a>
+        </div>
+      </article>
+      <article class="card">
+        <div class="meta"><h3> Digitasi jalur BRT Trans Semarang Jawa Tengah (April – Mei) </h3><span class="muted">2024</span></div>
+        <p>Digitasi jalur BRT Trans Semarang Jawa Tengah tahun 2024 untuk analisis jalur transportasi pada Kota Semarang.</p>
+        <div style="height:140px;border-radius:8px;overflow:hidden;display:grid;place-items:center;background:linear-gradient(135deg,#e6f6ff,#ffffff);">
+          <!-- Simple inline SVG placeholder; replace with real map thumbnail -->
+          <svg width="100%" height="100%" viewBox="0 0 600 140" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+       <image href="foto/brt.png" width="100%" height="100%" preserveAspectRatio="xMidYMid slice"/>
+        </svg>
+        </div>
+        <p class="muted">Methods: Digitasi jalan sesuai Rencana Tata Ruang Wilayah Kota Semarang kemudian ditandai jalan-jalan yang dilalui BRT sehingga terbentuk data jalan khsusus yang dilalui trasportasi umum BRT.</p>
+        <div class="links">
+          <a class="btn" href="#" onclick="openInNewTab('https://gps.brtnusantara.com/maps.php')">Titik Sample</a>
+        </div>
+      </article>
+      <article class="card">
+        <div class="meta"><h3> Asisten Pemetaan (Juni –Februari)</h3><span class="muted">2024 - 2025</span></div>
+        <p> Pengerjaan dokumen rencana detail tata ruang di CV Artha Gemilang Engginering pada proyek penyusunan RDTR kawasan perkotaan Brebes, Jawa Tengah.</p>
+        <div style="height:140px;border-radius:8px;overflow:hidden;display:grid;place-items:center;background:linear-gradient(135deg,#e6f6ff,#ffffff);">
+          <!-- Simple inline SVG placeholder; replace with real map thumbnail -->
+            <svg width="100%" height="100%" viewBox="0 0 600 140" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+       <image href="foto/brebes.jpg" width="100%" height="100%" preserveAspectRatio="xMidYMid slice"/>
+        </svg>
+        </div>
+        <p class="muted">Analisis : simpangan pola ruang, kernel density, jaringan energi, jaringan telekomunikasi, jaringan air minum, jaringan air limbah, Rencana Pola Ruang dan Rencana Struktur Ruang.</p>
+        <div class="links">
+          <a class="btn" href="#" onclick="openInNewTab('https://arcgis.com/app')">Live Map</a>
+        </div>
+      </article>
+      <article class="card">
+        <div class="meta"><h3>Surveyor</h3><span class="muted">2024</span></div>
+        <p>Survey lapangan guna pengumpulan data sebagai dasar penentuan penyusunan Rencana Detail Tata Ruang di Wilayah Perkotaan Brebes, yang akan dipaparkan pada FGD ke 2 bersama para pemangku kebijakan.</p>
+        <div style="height:140px;border-radius:8px;overflow:hidden;display:grid;place-items:center;background:linear-gradient(135deg,#e6f6ff,#ffffff);">
+          <!-- Simple inline SVG placeholder; replace with real map thumbnail -->
+            <svg width="100%" height="100%" viewBox="0 0 600 140" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+       <image href="foto/survey.JPG" width="100%" height="100%" preserveAspectRatio="xMidYMid slice"/>
+        </svg>
+        </div>
+        <p class="muted">Methods: Survey semua aspek berupa sarana prasarana yang terdapat di Wilayah Perencanaan meliputi : Fasilitas Pendidikan, Kesehatan, Tempat Ibadah, Jaringan Listrik, Air dan lain lain.</p>
+      </article>
+      <article class="card">
+        <div class="meta"><h3> Asisten Pemetaan ( September - Oktober )</h3><span class="muted">2024</span></div>
+        <p>Pemetaan digitasi revisi Rencana Tata Ruang Wilayah Kabupaten Wonosobo Tahun 2024 menggunakan citra satelit resolusi tinggi tahun 2023 guna memperbaharui penggunaan lahan terbaru pada tahun 2024.</p>
+        <div style="height:140px;border-radius:8px;overflow:hidden;display:grid;place-items:center;background:linear-gradient(135deg,#e6f6ff,#ffffff);">
+          <!-- Simple inline SVG placeholder; replace with real map thumbnail -->
+            <svg width="100%" height="100%" viewBox="0 0 600 140" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+       <image href="foto/wonosobo.jpg" width="100%" height="100%" preserveAspectRatio="xMidYMid slice"/>
+        </svg>
+        </div>
+        <p class="muted">Methods: Digitasi Penggunaan lahan berupa, sawah, sungai, permukiman, hutan dan tanaman campuran.</p>
+      </article>
+      <article class="card">
+        <div class="meta"><h3> Asisten Pengabdian ( November )</h3><span class="muted">2024</span></div>
+        <p>Pembentukan potensi desa wisata tugu Kabupaten Demak yang terkena banjir rob yang di gagas oleh LPPM Uiversitas Diponegoro bertujuan untuk mengembangkan desa rawan karena rob untuk bisa menjadi desa wisata yang indah dan sehat.</p>
+        <div style="height:140px;border-radius:8px;overflow:hidden;display:grid;place-items:center;background:linear-gradient(135deg,#e6f6ff,#ffffff);">
+          <!-- Simple inline SVG placeholder; replace with real map thumbnail -->
+            <svg width="100%" height="100%" viewBox="0 0 600 140" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+       <image href="foto/demak.JPG" width="100%" height="100%" preserveAspectRatio="xMidYMid slice"/>
+        </svg>
+        </div>
+        <p class="muted">Methods:Focus Group Discussion untuk pemetaan potensi wisata berdasarkan keterangan warga.</p>
+        <div class="links">
+          <a class="btn" href="#" onclick="openInNewTab('https://undip.ac.id/post/38819/lppm-undip-lakukan-bakti-sosial-dan-pengembangan-desa-wisata-di-tugu-demak.html')">Report</a>
+        </div>
+      </article>
+      <article class="card">
+        <div class="meta"><h3> Asisten Pemetaan CV Hydro ( Juli- Saat ini )</h3><span class="muted">2025</span></div>
+        <p>Pemetaan spasial peta tematik dalam penyusunan UPAYA PENGELOLAAN LINGKUNGAN HIDUP DAN UPAYA PEMANTAUAN LINGKUNGAN HIDUP(UKL-UPL) RSIA Sembung, Grobogan, Jawa Tengah.</p>
+        <div style="height:140px;border-radius:8px;overflow:hidden;display:grid;place-items:center;background:linear-gradient(135deg,#e6f6ff,#ffffff);">
+          <!-- Simple inline SVG placeholder; replace with real map thumbnail -->
+            <svg width="100%" height="100%" viewBox="0 0 600 140" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+       <image href="foto/UKL.jpg" width="100%" height="100%" preserveAspectRatio="xMidYMid slice"/>
+        </svg>
+        </div>
+        <p class="muted">Methods: Landsat preprocessing, LST retrieval, NDVI, zonal stats, ArcGIS cartography.</p>
+        <div class="links">
+          <a class="btn" href="#" onclick="openInNewTab('https://arcgis.com/app')">Galery</a>
+        </div>
+      </article>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+      <h3>Surat Referensi Kerja</h3>
+      <div class="t-list" id="tlist">
+        <div class="t-item">
+          <strong>CV. ARTHA GEMILANG ENGGINERING</strong>
+          <p>"Surat Referensi Kerja Praktik"</p>
+           <div style="text-align:right">
+        <div class="muted"></div>
+        <a class="kbd" href="#" onclick="downloadKP('cv/SURATKP.pdf')">Download</a>
+      </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <footer id="contact">
+      <div>
+        <div style="font-weight:800">Contact</div>
+        <div class="muted">Email: <a href="mailto:atok@gmail.com">ahmadathoillah21@gmail.com</a> • Location: Pekalongan, Indonesia</div>
+        <div style="margin-top:8px">
+          <a class="btn" href="#" onclick="openInNewTab('https://github.com/username')">GitHub</a> 
+          <a class="btn" href="#" onclick="openInNewTab('https://www.linkedin.com')">LinkedIn</a>
+          <a class="btn" href="#" onclick="openInNewTab('https://www.instagram.com/atokkkkkk_?igsh=MTgxbXhxMXg5Y2F5bA==')">Instagram</a>
+          <a class="btn" href="#" onclick="openInNewTab('https://wa.me/6285647225635')">WhatsApp</a>
+        </div>
+      </div>
+      <div style="text-align:right">
+        <div class="muted"></div>
+        <a class="kbd" href="#" onclick="downloadCV('cv/AhmadAthoillah_CV.pdf')">Download CV</a>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Minimal JS for interactions (deferred) -->
+  <script>
+    // Utility: open in new tab
+    function openInNewTab(url){
+      try{window.open(url, '_blank', 'noopener');}
+      catch(e){location.href = url}
+    }
+
+    // Download CV (replace link with actual file path in repository)
+    function downloadCV(){
+      const url = 'cv/AhmadAthoillah_CV.pdf';
+      openInNewTab(url);
+    }
+
+    function downloadKP(){
+      const url = 'cv/SURATKP.pdf';
+      openInNewTab(url);
+    }
+
+    // Lightweight testimonials slider: auto-scroll
+    (function(){
+      const list = document.getElementById('tlist');
+      let x=0;
+      function step(){
+        x += 1;
+        if(x > list.scrollWidth - list.clientWidth) x = 0;
+        list.scrollTo({left: x, behavior:'smooth'});
+      }
+      let iv = setInterval(step, 2000);
+      // Pause on hover
+      list.addEventListener('mouseenter',()=>clearInterval(iv));
+      list.addEventListener('mouseleave',()=>iv=setInterval(step,2000));
+    })();
+
+    // Performance hints (no-op): recommended actions for deployment are in README below
+  </script>
+
+  <!-- Small README (visible in source) -->
+  <!--
+    Deployment instructions:
+    1. Save this file as index.html
+    2. Create a GitHub repository named: YOUR_GITHUB_USERNAME.github.io
+    3. Push index.html (and optionally folder /cv, /images) to the repo's root
+    4. GitHub Pages will publish at https://YOUR_GITHUB_USERNAME.github.io
+
+    Performance & security tips (do manually when ready):
+    - Optimize real thumbnails as WebP and provide srcset. Replace SVG placeholders.
+    - Serve fonts locally or rely on system fonts to avoid external font requests.
+    - Host CV and large assets in repo or use a CDN; enable compression (gzip/brotli) on server.
+    - Use HTTPS (GitHub Pages provides this) and avoid exposing sensitive API keys in frontend code.
+    - For interactive maps, prefer token-limited embeds and server-side proxies for sensitive requests.
+  -->
+</body>
+</html>
